@@ -1,0 +1,22 @@
+#include <iostream>
+
+
+using namespace std;
+
+int main()
+{
+    int n[5]={1,43,5,3,3};
+    for(int i=0 ;i<5;i++)
+        {
+            for(int j=i+1;j<5;j++){                               // start j from i+1 to get single pairs
+                                                                  // else you get same pairs twice ie(4&5 and 5&4)
+                    if((n[i]+n[j])==6){
+                        printf("%d %d \n",n[i],n[j]);
+                    }
+
+        }
+        }
+
+
+    return 0;
+}
