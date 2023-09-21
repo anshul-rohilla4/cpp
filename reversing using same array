@@ -1,0 +1,25 @@
+#include <iostream>
+#include<bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    int n[5]={1,43,5,3,3};
+    int a = sizeof(n)/sizeof(n[0]);
+    int start=0;
+    int end1=a-1;
+    while(start<end1){    // swapping end with start
+        int temp=n[end1];
+        n[end1]=n[start];
+        n[start]=temp;
+        end1--;
+        start++;
+    }
+    for(int i=0;i<a;i++){
+        cout<<" "<<n[i];
+    }
+
+    return 0;
+}
