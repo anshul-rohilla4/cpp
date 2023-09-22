@@ -1,0 +1,22 @@
+#include <iostream>
+#include<bits/stdc++.h>
+
+
+using namespace std;
+void  printArray(int Array[],int size_){
+        for ( int i=0;i<size_;i++){
+            cout<<Array[i]<<endl;
+        }
+    }
+
+int main(){
+    int Array[]={2,6,65,684,84,46,65,46,62,46,92,6};
+
+
+    int size_=sizeof(Array)/sizeof(Array[0]);
+    printArray(Array,size_);
+
+
+
+    return 0;
+}
