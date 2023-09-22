@@ -1,39 +1,44 @@
 #include <iostream>
+#include<bits/stdc++.h>
 
 
 using namespace std;
+void  printArray(int Array[],int size_){
 
-int main()
-{
-    int n;
-    printf("enter the size of an array :");
-    scanf("%d",&n);
+    int evens[size_];
+    int o=0,e=0;
+    int odds[size_];
+        for ( int i=0;i<size_;i++){
+           if(Array[i]%2==0){
 
-    int array1[n];
+            evens[e]=Array[i];
+            e++;
+           }
+           else{
 
-    for (int i=0;i<n;i++){
-        scanf("%d",&array1[i]);
+            odds[o]=Array[i];
+            o++;
+
+           }
     }
-    int sum=0;
-
-    for (int i=0;i<n;i++){
-            if(!(array1[i]%2==0)){
-                sum+=1;
-            }
+    cout<<"Even nums : " ;
+    for(int i=0;i<e;i++){
+        cout<<evens[i]<<" ";
     }
+    cout<<endl;
 
-            printf("odd num are: %d",sum);
-/*
-for (int i=0;i<n;i++){
-            if(array1[i]%2==0){
-                sum+=1;
-            }
+    cout<<"Odd nums : " ;
+    for(int i=0;i<o;i++){
+        cout<<odds[i]<<" ";
     }
+}
 
-            printf("even num are: %d",sum);
+int main(){
+    int Array[]={2,6,65,684,84,46,65,46,62,46,92,6};
 
-*/
 
+    int size_=sizeof(Array)/sizeof(Array[0]);
+    printArray(Array,size_);
 
 
 
