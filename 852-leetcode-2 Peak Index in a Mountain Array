@@ -1,0 +1,38 @@
+//for time complexity  O(log(arr.length))
+
+
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+
+int peakIndexInMountainArray(vector<int> &arr)
+{
+    int size = arr.size();
+    int s = 0, e = size - 1;
+    int mid = s + (e - s) / 2;
+    
+    while (s < e)
+    {
+        
+        if (arr[mid] < arr[mid + 1])
+        {
+            s = mid+1;
+            
+        }
+        else
+        {
+            e = mid ;
+        }
+        mid = s + (e - s) / 2;
+    }
+    return s;
+    
+}
+int main()
+{
+    vector<int> arr = {0,1,2,4,3,2,1,0};
+    cout << peakIndexInMountainArray(arr);
+    cout << endl;
+    return 0;
+}

@@ -1,0 +1,64 @@
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
+
+long long int mySqrt(int x, int precision)
+{
+    // gives only integer part of solution
+    int s = 0; // index start
+    int e = x; // index ends
+    int mid = -1;
+    long long int sqr, index = -1;
+
+    if (x == 0 || x == 1)
+    {
+        return x;
+    }
+    else
+    {
+        while (s <= e)
+        {
+            mid = s + (e - s) / 2;
+            sqr = (mid * mid);
+            if (sqr == x)
+            {
+                return mid;
+            }
+            if (sqr < x)
+            {
+                index = mid;
+                s = mid + 1;
+            }
+            else if (sqr > x)
+            {
+                e = mid - 1;
+            }
+        }
+    }
+    cout << "temp_sol = " << index << endl;
+
+    double k = 1;
+    double ans = index;
+
+    for (int i = 0; i < precision; i++)
+    {
+        k = k / 10;
+        while ((ans + k) * (ans + k) <= x)
+        {
+            ans += k; // Increment ans by k until it exceeds sqrt(x)
+        }
+    }
+    cout << "answer = " << ans << endl;
+
+    return 0;
+}
+
+int main()
+{
+    int num = 10;
+    cout << mySqrt(num, 5) << endl;
+    cout << endl;
+
+    return 0;
+}
